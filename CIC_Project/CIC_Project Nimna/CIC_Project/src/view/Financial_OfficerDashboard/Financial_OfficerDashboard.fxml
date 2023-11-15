@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1020.0" prefWidth="1920.0" stylesheets="@../../styles/financial_OfficerDashboard/Financial_OfficerDashboard.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Financial_OfficerDashboard.FinancialOfficerDashboardController">
+   <children>
+      <AnchorPane fx:id="sidePnale" prefHeight="1080.0" prefWidth="307.0">
+         <children>
+            <ImageView fitHeight="76.0" fitWidth="74.0" layoutX="116.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/Default-Profile-PNG-removebg-preview.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="100.0" layoutY="90.0" text="Financial Officer" />
+            <Label fx:id="nameLabel" layoutX="109.0" layoutY="59.0" prefHeight="30.0" prefWidth="88.0" text="Mr.Perera">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Line endX="196.0" endY="-1.52587890625E-5" layoutX="111.0" layoutY="132.0" startX="-111.0" startY="-1.52587890625E-5" AnchorPane.topAnchor="125.50001525878906" />
+            <JFXButton fx:id="mainDashboard" contentDisplay="TOP" layoutY="249.0" onAction="#btnDash" prefHeight="112.0" prefWidth="307.0" text="DASHBOARD">
+               <font>
+                  <Font name="Corbel Bold" size="25.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="59.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/icons8-dashboard-50.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="stockbtn" contentDisplay="TOP" layoutX="1.0" layoutY="500.0" onAction="#mainStockBtn" prefHeight="106.0" prefWidth="307.0" text="STOCK">
+               <font>
+                  <Font name="Corbel Bold" size="22.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="59.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/icons8-open-parcel-50.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton contentDisplay="TOP" layoutY="760.0" onAction="#dashBoardProfitOnAction" prefHeight="106.0" prefWidth="307.0" text="PROFIT">
+               <font>
+                  <Font name="Corbel Bold" size="22.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="59.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/icons8-money-bag-50.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="309.0" prefHeight="1080.0" prefWidth="1613.0">
+         <children>
+            <AnchorPane fx:id="loadFormContext" prefHeight="1080.0" prefWidth="1613.0" />
+         </children></AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1020.0" prefWidth="1532.0" stylesheets="@../styles/StockMangeFrom.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StockManagefromController">
+   <children>
+      <TabPane fx:id="stockmanagetabpnale" layoutX="25.0" layoutY="25.0" prefHeight="960.0" prefWidth="1517.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Input Stock">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <AnchorPane fx:id="anchorPane1" layoutX="40.0" layoutY="14.0" prefHeight="87.0" prefWidth="442.0">
+                           <children>
+                              <Label layoutX="44.0" layoutY="28.0" text="Full ordered Stock">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font></Label>
+                              <Label fx:id="fullorderLabel" layoutX="266.0" layoutY="28.0" text="52000000">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font></Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="anchorPane2" layoutX="1058.0" layoutY="11.0" prefHeight="87.0" prefWidth="409.0">
+                           <children>
+                              <Label layoutX="69.0" layoutY="27.0" text="Remain Stock">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font></Label>
+                              <Label fx:id="remainLabel" alignment="CENTER" layoutX="244.0" layoutY="29.0" prefHeight="32.0" prefWidth="119.0" text="48970">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font></Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="anchorPane3" layoutX="563.0" layoutY="14.0" prefHeight="87.0" prefWidth="413.0">
+                           <children>
+                              <Label layoutX="54.0" layoutY="28.0" text="Distributed Stock">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font></Label>
+                              <Label fx:id="distributedLabel" layoutX="262.0" layoutY="28.0" text="100000000">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font></Label>
+                           </children>
+                        </AnchorPane>
+                        <JFXComboBox fx:id="fertilizerType" layoutX="57.0" layoutY="243.0" prefHeight="41.0" prefWidth="365.0" promptText="Fertilizer type" />
+                        <JFXTextField fx:id="expences" layoutX="59.0" layoutY="398.0" prefHeight="44.0" prefWidth="355.0" promptText="Expenses incurred">
+                           <font>
+                              <Font size="20.0" />
+                           </font></JFXTextField>
+                        <JFXTextField fx:id="stockOrdered" layoutX="59.0" layoutY="544.0" prefHeight="44.0" prefWidth="368.0" promptText="Fertilizer stock ordered">
+                           <font>
+                              <Font size="20.0" />
+                           </font></JFXTextField>
+                        <JFXButton fx:id="inputStocksavebtn" layoutX="279.0" layoutY="706.0" onAction="#fertilizerSaveBtnOnAction" prefHeight="41.0" prefWidth="120.0" text="Save" />
+                        <TableView fx:id="fertilizerTable" layoutX="478.0" layoutY="184.0" prefHeight="606.0" prefWidth="970.0">
+                          <columns>
+                            <TableColumn fx:id="fertilizerTypeColomn" prefWidth="272.33331298828125" text="Fertilizer Type" />
+                            <TableColumn fx:id="fertilizerAmountColumn" prefWidth="389.66668701171875" text="Fertilizer Amount" />
+                              <TableColumn fx:id="expencesColumn" prefWidth="304.0" text="Expenses" />
+                          </columns>
+                        </TableView>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="manageOrder" onSelectionChanged="#onSelectionManageForm" text="Manage Oder">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <JFXDatePicker fx:id="OrderDate" layoutX="64.0" layoutY="109.0" prefHeight="31.0" prefWidth="329.0" promptText="Add Oder Date" />
+                        <JFXTextField fx:id="orderQty" layoutX="61.0" layoutY="208.0" prefHeight="31.0" prefWidth="331.0" promptText="Add Oder Qty">
+                           <font>
+                              <Font size="18.0" />
+                           </font></JFXTextField>
+                        <JFXTextField fx:id="orderId" layoutX="62.0" layoutY="313.0" prefHeight="31.0" prefWidth="333.0" promptText="Oder ID">
+                           <font>
+                              <Font size="18.0" />
+                           </font></JFXTextField>
+                        <JFXTextField fx:id="custName" layoutX="65.0" layoutY="408.0" prefHeight="31.0" prefWidth="329.0" promptText="customer name">
+                           <font>
+                              <Font size="18.0" />
+                           </font></JFXTextField>
+                        <JFXTextField fx:id="custContact" layoutX="64.0" layoutY="515.0" prefHeight="31.0" prefWidth="333.0" promptText="customer contact number">
+                           <font>
+                              <Font size="18.0" />
+                           </font></JFXTextField>
+                        <JFXTextField fx:id="custAddress" layoutX="67.0" layoutY="619.0" prefHeight="31.0" prefWidth="333.0" promptText="Shipping address">
+                           <font>
+                              <Font size="18.0" />
+                           </font></JFXTextField>
+                        <JFXButton fx:id="addbtn" layoutX="208.0" layoutY="729.0" onAction="#addbtnOnAction" prefHeight="31.0" prefWidth="161.0" text="Add Oder" />
+                        <TableView fx:id="OrdertableView" layoutX="514.0" layoutY="38.0" prefHeight="781.0" prefWidth="975.0">
+                          <columns>
+                            <TableColumn fx:id="OrderQtyColumn" prefWidth="168.0" text="Order Id" />
+                            <TableColumn fx:id="OrderDateColumn" prefWidth="212.66668701171875" text="Order Date" />
+                              <TableColumn fx:id="OrderIdColomn" prefWidth="283.33331298828125" text="Order Qty" />
+                              <TableColumn fx:id="customerName" prefWidth="309.0" text="Customer Name" />
+                          </columns>
+                        </TableView>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <Label layoutX="1156.0" layoutY="30.0" prefHeight="55.0" prefWidth="223.0" text="Stock Manage" textFill="#9f8e8e">
+         <font>
+            <Font name="System Bold" size="31.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

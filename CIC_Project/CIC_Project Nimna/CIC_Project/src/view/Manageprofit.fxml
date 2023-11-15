@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.StackedBarChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1080.0" prefWidth="1613.0" stylesheets="@../styles/ManageProfit.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManageprofitController">
+   <children>
+      <TabPane layoutX="25.0" layoutY="25.0" prefHeight="960.0" prefWidth="1517.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Invest Data">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <JFXTextField fx:id="fertilizerExpences" layoutX="26.0" layoutY="263.0" prefHeight="31.0" prefWidth="352.0" promptText="Fertilizer Expenses" />
+                        <JFXTextField fx:id="plantExpences" layoutX="23.0" layoutY="364.0" prefHeight="31.0" prefWidth="352.0" promptText="plants Expenses" />
+                        <JFXTextField fx:id="additionalCost" layoutX="19.0" layoutY="451.0" prefHeight="31.0" prefWidth="351.0" promptText="Additional costs" />
+                        <JFXTextField fx:id="EmployeeSalary" layoutX="19.0" layoutY="551.0" prefHeight="31.0" prefWidth="351.0" promptText="Employee Salary" />
+                        <JFXButton fx:id="investDatasavebtn" layoutX="257.0" layoutY="620.0" onAction="#saveBtnOnAction" prefHeight="31.0" prefWidth="113.0" text="Save" />
+                        <TableView fx:id="profitTable" layoutX="398.0" layoutY="70.0" prefHeight="633.0" prefWidth="1103.0">
+                          <columns>
+                            <TableColumn fx:id="blockName" prefWidth="222.0" text="Block Name" />
+                            <TableColumn fx:id="plantExpenses" prefWidth="225.0" text="Plant Expenses" />
+                              <TableColumn fx:id="additional_Cost" prefWidth="230.0" text="Additional costs" />
+                              <TableColumn fx:id="employeeSalary" prefWidth="219.6666259765625" text="Employee Salary" />
+                              <TableColumn fx:id="fertilizerExpenses" prefWidth="216.3333740234375" text="Fertilizer Expenses" />
+                          </columns>
+                        </TableView>
+                        <JFXTextField layoutX="88.0" layoutY="789.0" prefHeight="31.0" prefWidth="677.0" promptText="Mail" />
+                        <JFXButton fx:id="investDatasavebtn2" layoutX="848.0" layoutY="791.0" prefHeight="31.0" prefWidth="136.0" text="Send" />
+                        <JFXComboBox fx:id="selectArea" layoutX="27.0" layoutY="167.0" prefHeight="31.0" prefWidth="348.0" promptText="  Select Area" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab onSelectionChanged="#profitManageOnAction" text="Profit Table">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <StackedBarChart fx:id="stackedbarchatmanageProfit" layoutX="35.0" layoutY="45.0" prefHeight="778.0" prefWidth="876.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </StackedBarChart>
+                        <JFXComboBox layoutX="1027.0" layoutY="125.0" prefHeight="68.0" prefWidth="413.0" promptText="   Year" />
+                        <JFXComboBox layoutX="1025.0" layoutY="214.0" prefHeight="58.0" prefWidth="411.0" promptText="   Arear" />
+                        <Label fx:id="profitLabel1" alignment="CENTER" layoutX="986.0" layoutY="31.0" prefHeight="59.0" prefWidth="469.0" text="  Area Name">
+                           <font>
+                              <Font size="41.0" />
+                           </font></Label>
+                        <JFXTextArea fx:id="profitNoteArea" layoutX="1008.0" layoutY="310.0" prefHeight="402.0" prefWidth="442.0" />
+                        <JFXTextField layoutX="1007.0" layoutY="724.0" prefHeight="52.0" prefWidth="443.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font></JFXTextField>
+                        <JFXButton fx:id="profitAddNotebtn" layoutX="1177.0" layoutY="814.0" prefHeight="40.0" prefWidth="131.0" text="Add Note">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font></JFXButton>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <Label layoutX="1201.0" layoutY="29.0" prefHeight="35.0" prefWidth="289.0" text="Manage Profit" textFill="#9f8e8e">
+         <font>
+            <Font name="System Bold" size="37.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

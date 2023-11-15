@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="signUpFormContext" prefHeight="534.0" prefWidth="782.0" stylesheets="@../styles/SingUpfrom.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SignUpFormController">
+   <children>
+      <ImageView fitHeight="552.0" fitWidth="782.0" layoutY="1.0" pickOnBounds="true">
+         <image>
+            <Image url="@../img/ghrththhhhhthdthtdhtdhdt%20(29).png" />
+         </image>
+      </ImageView>
+      <Label layoutX="310.0" layoutY="14.0" text="Create Account" textFill="#6dcc5e">
+         <font>
+            <Font name="Franklin Gothic Heavy Italic" size="52.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="nametex" layoutX="300.0" layoutY="105.0" prefHeight="25.0" prefWidth="322.0" promptText="Full Name" />
+      <JFXTextField fx:id="passwordtext" layoutX="300.0" layoutY="255.0" prefHeight="25.0" prefWidth="322.0" promptText="Password" />
+      <JFXTextField fx:id="rpassword" layoutX="300.0" layoutY="325.0" prefHeight="25.0" prefWidth="322.0" promptText="Re-enter Password" />
+      <ComboBox fx:id="sigeUpFromComboBox" layoutX="300.0" layoutY="439.0" prefHeight="34.0" prefWidth="238.0" promptText="Account Type" style="-fx-background-color: #82ccdd;" styleClass="edge-button" stylesheets="@../styles/style.css" />
+      <JFXButton fx:id="regidhtbtn" layoutX="615.0" layoutY="477.0" onAction="#registerOnAction" prefHeight="37.0" prefWidth="114.0" style="-fx-background-color: #78e08f;" styleClass="edgez-button" stylesheets="@../styles/style.css" text="REGISTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="33.0" layoutY="103.0" prefHeight="87.0" prefWidth="219.0" text="To keep connected with&#10;us please log in with your &#10;personal info&#10; " textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="24.0" layoutY="27.0" text="Welcome Back!" textFill="WHITE">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+      <Label fx:id="sinbtn" layoutX="82.0" layoutY="388.0" opacity="0.43" prefHeight="37.0" prefWidth="100.0" style="-fx-background-color: white;" text=" " />
+      <JFXButton fx:id="singbt" layoutX="75.0" layoutY="383.0" onAction="#btnSignUPin" prefHeight="47.0" prefWidth="114.0" text="SIGN IN" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField fx:id="email" layoutX="300.0" layoutY="175.0" prefHeight="31.0" prefWidth="322.0" promptText="Email" />
+      <JFXButton layoutX="288.0" layoutY="383.0" onAction="#faceRegistrationOnAction" prefHeight="31.0" prefWidth="144.0" style="-fx-background-color: transparent;" text="Face Registration" underline="true" />
+   </children>
+</AnchorPane>

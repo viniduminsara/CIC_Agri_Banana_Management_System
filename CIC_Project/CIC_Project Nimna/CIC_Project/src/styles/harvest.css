@@ -1,0 +1,138 @@
+.tab-header-area .tab-header-background {
+    -fx-background-color: -fx-primary-color;
+    -fx-border-color: transparent transparent #000000 transparent;
+}
+.tab-pane .tab:selected {
+    -fx-border-color: rgba(0, 0, 0, 0) transparent #84f8e3 rgba(0, 0, 0, 0);
+    -fx-border-width: 1px,0px,0px,0px;
+}
+.tab .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: #000000;
+    -fx-font-weight: bold;
+    -fx-padding: 0 10 0 10;
+}.tab .tab-label:hover {
+
+     -fx-alignment: CENTER;
+     -fx-text-fill: rgba(52, 246, 217, 0.59);
+     -fx-font-weight: bold;
+
+
+ }.tab .tab-label:focused {
+
+      -fx-alignment: CENTER;
+      -fx-text-fill: #91f3e1;
+      -fx-font-weight: bold;
+
+
+
+  }
+.tab-pane {
+    -fx-background-color: transparent;
+    -fx-tab-min-width: 100px;
+    -fx-tab-min-height: 66px;
+    -fx-tab-max-height: 66px;
+}
+.tab-pane .tab {
+    -fx-background-color: transparent;
+}
+.tab-pane:focused .tab-header-area .headers-region .tab:selected .focus-indicator {
+    -fx-border-width: 0;
+    -fx-border-insets: 0 0 0 0;
+    -fx-border-radius: 0;
+}
+#menu-bar{
+    -fx-background-color: black;
+}
+#inputlabel2{
+
+     -fx-background-color: linear-gradient(from 13px 38px to 52px 52px, rgba(0, 196, 255, 0.82), #14fff5 100%);
+     -fx-background-radius: 15;
+
+ }
+#inputlabel3{
+
+      -fx-background-color: linear-gradient(from 13px 38px to 52px 52px, rgba(122, 255, 17, 0.68), rgba(86, 246, 156, 0.78) 100%);
+      -fx-background-radius: 15;
+
+  }
+#inputlabel4{
+
+       -fx-background-color: linear-gradient(from 13px 38px to 52px 52px, rgba(239, 50, 150, 0.71), rgba(210, 94, 246, 0.83) 100%);
+       -fx-background-radius: 15;
+
+}
+#plantmaintainbtn,#sendreportbtn{
+    -fx-background-radius: 15;
+    -fx-background-color: rgba(117, 104, 201, 0.89);
+}
+.table-view{
+    -fx-background-radius: 15;
+
+}
+.table-view{
+    -fx-background-color: rgba(0, 0, 0, 0.24);
+    -fx-border-radius: 2;
+    -fx-border-color: black;
+}
+
+.table-view:focused{
+    -fx-background-color: rgba(0, 0, 0, 0.24);
+}
+
+
+.table-view .column-header-background{
+    -fx-background-color: linear-gradient(#131313 0%, #424141 100%);
+
+}
+
+.table-view .column-header-background .label{
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+
+.table-view .table-cell{
+    -fx-text-fill: white;
+}
+
+.table-row-cell{
+    -fx-background-color: -fx-table-cell-border-color, #616161;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em; /* 0 */
+}
+
+.table-row-cell:odd{
+    -fx-background-color: -fx-table-cell-border-color, #424242;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em; /* 0 */
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #005797;
+    -fx-background-insets: 0;
+    -fx-background-radius: 1;
+}
+
+.table-view > .virtual-flow > .scroll-bar:vertical,
+.table-view > .virtual-flow > .scroll-bar:vertical > .track,
+.table-view > .virtual-flow > .scroll-bar:vertical > .track-background,
+.table-view > .virtual-flow > .scroll-bar:horizontal,
+.table-view > .virtual-flow > .scroll-bar:horizontal > .track,
+.table-view > .virtual-flow > .scroll-bar:horizontal > .track-background {
+    -fx-background-color: transparent;
+}
+
+
+
+.table-view > .virtual-flow > .scroll-bar > .increment-button,
+.table-view > .virtual-flow > .scroll-bar > .decrement-button {
+    -fx-opacity: 0;
+}
+#inputfromlable{
+    -fx-font-size: 19;
+}

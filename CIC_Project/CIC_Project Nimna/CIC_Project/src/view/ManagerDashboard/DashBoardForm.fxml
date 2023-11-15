@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" stylesheets="@../../styles/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.manager.DashBoardFormController">
+   <children>
+      <AnchorPane fx:id="dddd" prefHeight="1080.0" prefWidth="307.0" styleClass="btnSide">
+         <children>
+            <JFXButton fx:id="mainDashboard" contentDisplay="TOP" layoutY="152.0" onAction="#btnDash" prefHeight="112.0" prefWidth="307.0" text="DASHBOARD">
+               <font>
+                  <Font name="Corbel Bold" size="25.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="59.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/icons8-dashboard-50.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton contentDisplay="TOP" layoutX="1.0" layoutY="277.0" onAction="#btnBlock" prefHeight="112.0" prefWidth="307.0" text="BLOCK">
+               <font>
+                  <Font name="Corbel Bold" size="25.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="59.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/icons8-bangalore-50%20(1).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="dashboardHarvest" contentDisplay="TOP" layoutY="398.0" onAction="#dashboardHarvestOnAction" prefHeight="112.0" prefWidth="307.0" text="HARVEST">
+               <font>
+                  <Font name="Corbel Bold" size="25.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="59.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/icons8-harvest-91.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="stockbtn" contentDisplay="TOP" layoutY="536.0" onAction="#mainStockBtn" prefHeight="106.0" prefWidth="307.0" text="STOCK">
+               <font>
+                  <Font name="Corbel Bold" size="22.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="59.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/icons8-open-parcel-50.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton contentDisplay="TOP" layoutY="672.0" onAction="#dashBoardProfitOnAction" prefHeight="106.0" prefWidth="307.0" text="PROFIT" AnchorPane.topAnchor="672.0">
+               <font>
+                  <Font name="Corbel Bold" size="22.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="59.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/icons8-money-bag-50.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <ImageView fitHeight="76.0" fitWidth="74.0" layoutX="116.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/Default-Profile-PNG-removebg-preview.png" />
+               </image>
+            </ImageView>
+            <JFXButton layoutX="116.0" layoutY="840.0" onAction="#btnExit" prefHeight="74.0" prefWidth="74.0" text=" ">
+               <graphic>
+                  <ImageView fitHeight="54.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/icons8-logout-rounded-48.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <Label fx:id="nameLabel" alignment="CENTER" layoutY="65.0" prefHeight="25.0" prefWidth="307.0" text="Mr.Perera">
+               <font>
+                  <Font name="Candara Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutY="90.0" prefHeight="22.0" prefWidth="307.0" text="manager" textAlignment="RIGHT">
+               <font>
+                  <Font name="Candara" size="12.0" />
+               </font>
+            </Label>
+            <Line endX="199.0" endY="1.52587890625E-5" layoutX="109.0" layoutY="126.0" startX="-109.0" startY="1.52587890625E-5" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="loadFormContext" layoutX="309.0" prefHeight="1080.0" prefWidth="1613.0" style="-fx-background-color: #ffffff;" stylesheets="@../../styles/style.css" />
+   </children>
+</AnchorPane>

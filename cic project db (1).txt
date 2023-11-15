@@ -1,0 +1,156 @@
+ CREATE DATABASE cicAgriBanana;
+
+=====================
+
+USE cicAgriBanana;
+=================================================
+
+CREATE TABLE admin (
+ 	  	gmail_id VARCHAR (50) PRIMARY KEY,
+		full_name VARCHAR (100) NOT NULL,
+		password VARCHAR (10) NOT NULL ,
+		account_type ENUM ('Manager','Crop Harvestor','Financial Officer')		
+);
+
+==========================================
+
+CREATE TABLE block(
+		block_id VARCHAR (50) PRIMARY KEY,
+		area DECIMAL(10,2) NOT NULL,
+		ph_value DECIMAL(6,2) NOT NULL,
+		plant_quantity INT NOT NULL,
+		humidity DECIMAL(6,2) NOT NULL,
+		block_name VARCHAR (100) NOT NULL,
+		additionalCost DECIMAL(10,2) NOT NULL,
+		employee_salary DECIMAL(10,2) NOT NULL,
+		gmail_id VARCHAR (50) NOT NULL,
+		plant_Expenses DECIMAL(10,2),
+                    fertilizer_expenses DECIMAL(10,2),
+		CONSTRAINT FOREIGN KEY (gmail_id) REFERENCES admin (gmail_id)
+);
+
+==========================================
+Block_01,10.00,6.50,10000,22.70,Block A,0.00,0.00,nimnakaveesha123456@gmail.com,"
+Cavendish plants require about 7 sq m per plant and are usually planted at 3.0 m by 2.4 m. Bunch size and grade (plant too close and the bunches will be small with smaller fruit). Bunch cycling (plant too close and the followers will be slower bunching and bunches slower filling)."
+Block_02,12.00,6.56,12000,22.70,Block B,0.00,0.00,nimnakaveesha123456@gmail.com,Cavendish plants require about 7 sq m per plant and are usually planted at 3.0 m by 2.4 m. Bunch size and grade (plant too close and the bunches will be small with smaller fruit). Bunch cycling (plant too close and the followers will be slower bunching and bunches slower filling).
+Block_03,8.00,6.55,8000,22.70,Block C,0.00,0.00,nimnakaveesha123456@gmail.com,Cavendish plants require about 7 sq m per plant and are usually planted at 3.0 m by 2.4 m. Bunch size and grade (plant too close and the bunches will be small with smaller fruit). Bunch cycling (plant too close and the followers will be slower bunching and bunches slower filling).
+Block_04,11.00,6.55,11000,22.70,Block D,0.00,0.00,nimnakaveesha123456@gmail.com,Cavendish plants require about 7 sq m per plant and are usually planted at 3.0 m by 2.4 m. Bunch size and grade (plant too close and the bunches will be small with smaller fruit). Bunch cycling (plant too close and the followers will be slower bunching and bunches slower filling).
+Block_05,7.00,6.50,7000,22.70,Block E,0.00,0.00,nimnakaveesha123456@gmail.com,Cavendish plants require about 7 sq m per plant and are usually planted at 3.0 m by 2.4 m. Bunch size and grade (plant too close and the bunches will be small with smaller fruit). Bunch cycling (plant too close and the followers will be slower bunching and bunches slower filling).
+
+==============================================
+CREATE TABLE harvest(
+		full_harvest_id VARCHAR(50) PRIMARY KEY,	
+		harvest_amount DECIMAL (10,2) NOT NULL,
+		stock_id VARCHAR (50) NOT NULL,
+		block_id VARCHAR (50) NOT NULL,
+		CONSTRAINT FOREIGN KEY (stock_id) REFERENCES stock (stock_id),
+		CONSTRAINT FOREIGN KEY (block_id) REFERENCES block (block_id)
+);
+
+==========================================
+
+CREATE TABLE stock(
+		stock_id VARCHAR (50) PRIMARY KEY,
+		stock_amount DECIMAL(10,2) NOT NULL,
+		stock_date DATE NOT NULL
+);
+
+==========================================
+
+CREATE TABLE fertilizer(
+		fertilizer_id VARCHAR (50) PRIMARY KEY,
+		fertilizer_amount DECIMAL (10,2) NOT NULL,
+		liters_of_water DECIMAL (10,2) NOT NULL,
+		introduction TEXT NOT NULL
+);
+//fertilizer_type ENUM ('fertilizer 1','fertilizer 2','fertilizer 3')
+==============================================
+
+CREATE TABLE block_fertilizer(
+		block_id VARCHAR (50) ,
+		fertilizer_id VARCHAR (50),
+		fertilizer_distributed_amount DECIMAL(10,2) NOT NULL,
+		fertilizer_date DATE NOT NULL,
+		add_note TEXT NOT NULL,
+		CONSTRAINT FOREIGN KEY (block_id) REFERENCES  block (block_id),
+		CONSTRAINT FOREIGN KEY (fertilizer_id) REFERENCES  fertilizer (fertilizer_id),
+		CONSTRAINT PRIMARY KEY (block_id,fertilizer_id)
+);
+
+===================================================
+
+CREATE TABLE wastage (
+			wastage_id VARCHAR (50) PRIMARY KEY,
+			wastage_amount DECIMAL(10,2) NOT NULL
+);
+
+===================================================
+
+CREATE TABLE harvest_manage(
+			wastage_id VARCHAR (50),
+			full_harvest_id VARCHAR(50),
+			harvest_date DATE,
+			remainning_harvest_amount DECIMAL(7,2) NOT NULL,
+			price_per_kg DECIMAL(7,2) NOT NULL,
+			CONSTRAINT FOREIGN KEY (wastage_id) REFERENCES wastage (wastage_id),
+			CONSTRAINT FOREIGN KEY (full_harvest_id) REFERENCES  harvest (full_harvest_id),
+			CONSTRAINT PRIMARY KEY (wastage_id,full_harvest_id)
+);
+
+======================================================
+CREATE TABLE customer(
+			customer_id VARCHAR (10) PRIMARY KEY,
+			name VARCHAR (50) NOT NULL,
+			contact VARCHAR(12) NOT NULL,
+			address TEXT NOT NULL
+);
+
+==========================================================
+
+CREATE TABLE orders(
+		order_id VARCHAR(50) PRIMARY KEY,
+		date DATE NOT NULL,
+		customer_id VARCHAR(10),
+		CONSTRAINT FOREIGN KEY (customer_id) REFERENCES  customer (customer_id)
+);
+
+============================================================
+
+CREATE TABLE stock_order(
+		stock_id VARCHAR (50),
+		order_id VARCHAR(50),
+		date DATE NOT NULL,
+		qty INT NOT NULL,
+		CONSTRAINT FOREIGN KEY (stock_id) REFERENCES  stock(stock_id),
+		CONSTRAINT FOREIGN KEY (order_id) REFERENCES orders(order_id),
+		CONSTRAINT PRIMARY KEY (stock_id,order_id)
+	);
+
+============================================================
+
+CREATE TABLE plant(
+		plant_id VARCHAR(50) PRIMARY KEY,
+		plant_type VARCHAR (100),
+		total_amount INT
+);
+
+plant@001,Cavendish Banana,10000
+plant@002,Anamalu Banana,8000
+plant@003,Kolikuttu Banana,5000
+
+
+============================================================
+
+CREATE TABLE block_plant(
+		block_id VARCHAR (50),
+		plant_id VARCHAR(50),
+		plant_date DATE NOT NULL,
+		amount INT NOT NULL,
+		CONSTRAINT FOREIGN KEY (block_id) REFERENCES block (block_id),
+		CONSTRAINT FOREIGN KEY (plant_id) REFERENCES plant (plant_id),
+		CONSTRAINT PRIMARY KEY (block_id,plant_id,plant_date)
+
+		
+);
+
+

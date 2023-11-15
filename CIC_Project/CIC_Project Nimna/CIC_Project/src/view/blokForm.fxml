@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="blokFormContext" opacity="0.86" prefHeight="1020.0" prefWidth="1532.0" style="-fx-background-color: rgb(255,255,255);" stylesheets="@../styles/Block.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BlokFormController">
+   <children>
+      <TabPane layoutX="30.0" layoutY="30.0" prefHeight="960.0" prefWidth="1517.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Area Manage">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="140.0" prefWidth="551.0" style="-fx-background-color: rgb(255,255,255);">
+                     <children>
+                        <TableView fx:id="areaManagementTable" layoutX="584.0" layoutY="324.0" prefHeight="498.0" prefWidth="845.0" AnchorPane.leftAnchor="584.0" AnchorPane.rightAnchor="88.0">
+                          <columns>
+                              <TableColumn fx:id="date" prefWidth="186.0" text="Date" />
+                            <TableColumn fx:id="block_name" prefWidth="203.0" text="Area Name" />
+                              <TableColumn fx:id="plant_qtys" prefWidth="216.0" text="    Cultivated Quantity" />
+                              <TableColumn fx:id="plant_type" prefWidth="238.0" text="Plant Type" />
+                          </columns>
+                        </TableView>
+                        <JFXTextField fx:id="cultivatedQtytxt" alignment="BASELINE_LEFT" layoutX="47.0" layoutY="592.0" prefHeight="40.0" prefWidth="379.0" promptText="    Cultivated Quantity">
+                           <font>
+                              <Font size="18.0" />
+                           </font></JFXTextField>
+                        <JFXComboBox fx:id="comboBox1" layoutX="47.0" layoutY="365.0" onAction="#onAction1" prefHeight="40.0" prefWidth="379.0" promptText="    Select area" />
+                        <JFXButton fx:id="areamanagebtn1" layoutX="328.0" layoutY="801.0" onAction="#onActionSave" prefHeight="36.0" prefWidth="101.0" text="Save" />
+                        <JFXComboBox fx:id="comboBox2" layoutX="47.0" layoutY="706.0" prefHeight="40.0" prefWidth="379.0" promptText="   Plant type" />
+                        <JFXDatePicker fx:id="datetxt" layoutX="48.0" layoutY="480.0" prefHeight="40.0" prefWidth="379.0" promptText="   Date" />
+                        <AnchorPane fx:id="manageBlock4a" layoutX="47.0" layoutY="35.0" prefHeight="219.0" prefWidth="1377.0">
+                           <children>
+                              <Label fx:id="blocklabel4" layoutX="764.0" layoutY="27.0" prefHeight="60.0" prefWidth="500.0" text="    Humidity">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="blocklable1" layoutX="27.0" layoutY="27.0" prefHeight="60.0" prefWidth="500.0" text="    Acres per area">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="blocklabel2" layoutX="27.0" layoutY="114.0" prefHeight="60.0" prefWidth="500.0" text="    Plant Quantity">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="blocklabel3" layoutX="764.0" layoutY="114.0" prefHeight="60.0" prefWidth="500.0" text="    PH">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="blocklable5" layoutX="421.0" layoutY="32.0" prefHeight="51.0" prefWidth="91.0">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="blocklable6" layoutX="1161.0" layoutY="32.0" prefHeight="51.0" prefWidth="91.0">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="blocklable7" layoutX="421.0" layoutY="119.0" prefHeight="51.0" prefWidth="91.0">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="blocklable8" layoutX="1161.0" layoutY="119.0" prefHeight="51.0" prefWidth="91.0">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="plantMaintainswitch" onSelectionChanged="#onSelectionplantMaintain" text="Plant Maintain">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="plantArea" layoutX="72.0" layoutY="37.0" prefHeight="60.0" prefWidth="500.0" text="    Area Name">
+                           <font>
+                              <Font size="28.0" />
+                           </font></Label>
+                        <TableView fx:id="manageBlockSummaryTable" layoutX="55.0" layoutY="485.0" prefHeight="311.0" prefWidth="1361.0">
+                          <columns>
+                              <TableColumn fx:id="areaName" prefWidth="213.0" text="Area Name" />
+                            <TableColumn fx:id="Date" prefWidth="194.0" text="Date" />
+                              <TableColumn fx:id="fertilizer_type" prefWidth="278.0" text="Fertilizer Type" />
+                              <TableColumn fx:id="fertilizer_siize" prefWidth="257.0" text="Fertilizer size" />
+                            <TableColumn fx:id="plant_quantaty" prefWidth="414.0" text="plant Qty" />
+                          </columns>
+                        </TableView>
+                        <JFXTextArea fx:id="planttextarea" layoutX="647.0" layoutY="135.0" prefHeight="280.0" prefWidth="788.0">
+                           <font>
+                              <Font size="20.0" />
+                           </font></JFXTextArea>
+                        <JFXTextField fx:id="type" layoutX="647.0" layoutY="422.0" prefHeight="44.0" prefWidth="542.0" promptText="Type">
+                           <font>
+                              <Font size="20.0" />
+                           </font></JFXTextField>
+                        <JFXButton fx:id="plantsendbtn" layoutX="1215.0" layoutY="430.0" onAction="#onActionaddNote" prefHeight="36.0" prefWidth="121.0" text="Add Note" />
+                        <JFXComboBox fx:id="comboBox3" layoutX="72.0" layoutY="126.0" prefHeight="40.0" prefWidth="379.0" promptText="Fertilizer type" />
+                        <JFXTextField fx:id="fertilizerAmount" layoutX="73.0" layoutY="209.0" prefHeight="40.0" prefWidth="379.0" promptText="Fertilizer Amount" />
+                        <JFXTextField fx:id="plants_amount" layoutX="72.0" layoutY="303.0" prefHeight="40.0" prefWidth="379.0" promptText="Plants Amount" />
+                        <JFXDatePicker fx:id="datepicker1" layoutX="72.0" layoutY="397.0" prefHeight="31.0" prefWidth="379.0" promptText="Add Date" />
+                        <JFXTextField layoutX="55.0" layoutY="829.0" prefHeight="31.0" prefWidth="835.0" promptText="email" />
+                        <JFXButton fx:id="sendbtn" layoutX="910.0" layoutY="824.0" onAction="#reportOnAction" prefHeight="36.0" prefWidth="105.0" text="Send" />
+                        <JFXButton fx:id="AddReportBtn" layoutX="484.0" layoutY="400.0" onAction="#onActionaddreport" prefHeight="31.0" prefWidth="120.0" text="Add Report" />
+                        <JFXButton layoutX="1196.0" layoutY="52.0" prefHeight="31.0" prefWidth="220.0" text="History" />
+                        <Label fx:id="plantAreaLabel" layoutX="370.0" layoutY="38.0" prefHeight="59.0" prefWidth="186.0">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                        </Label>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Label layoutX="750.0" layoutY="36.0" prefHeight="32.0" prefWidth="158.0" text="Manage Block" textFill="#9f8e8e" AnchorPane.leftAnchor="1300.0" AnchorPane.topAnchor="36.0">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

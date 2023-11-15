@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Cherry" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="13acf49e-4913-4d1b-bccc-113817ad15d1">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="cic agri banana"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="agritech" uuid="3c769981-56df-40e8-888f-1234412a27b0">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="cic agri banana"/>
+		<queryString language="SQL">
+			<![CDATA[]]>
+		</queryString>
+	</subDataset>
+	<subDataset name="tech" uuid="3a06750d-cb12-40c6-9c44-5b984e3ee0a5">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="cic agri banana"/>
+		<property name="com.jaspersoft.studio.data.sql.tables">
+			<![CDATA[Y2ljYWdyaWJhbmFuYS5ibG9jayBBUyAsMTAxLDEyMCxlNDAxYjVhZS04YTA5LTRkY2EtOWUxMi0z
+MzM2ZDhkNTU3NjU7]]>
+		</property>
+		<parameter name="blockname" class="java.lang.String"/>
+		<queryString>
+			<![CDATA[SELECT area,
+	ph_value,
+	plant_quantity,
+	humidity,
+	block_name
+FROM cicagribanana.block
+WHERE 
+	 cicagribanana.block.block_name = '$P!{blockname}']]>
+		</queryString>
+		<field name="area" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="area"/>
+			<property name="com.jaspersoft.studio.field.label" value="area"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="block"/>
+		</field>
+		<field name="ph_value" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="ph_value"/>
+			<property name="com.jaspersoft.studio.field.label" value="ph_value"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="block"/>
+		</field>
+		<field name="plant_quantity" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="plant_quantity"/>
+			<property name="com.jaspersoft.studio.field.label" value="plant_quantity"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="block"/>
+		</field>
+		<field name="humidity" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="humidity"/>
+			<property name="com.jaspersoft.studio.field.label" value="humidity"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="block"/>
+		</field>
+		<field name="block_name" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="block_name"/>
+			<property name="com.jaspersoft.studio.field.label" value="block_name"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="block"/>
+		</field>
+	</subDataset>
+	<parameter name="blockname" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[select * from block]]>
+	</queryString>
+	<field name="block_id" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="block_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="block_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="block"/>
+	</field>
+	<field name="area" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="area"/>
+		<property name="com.jaspersoft.studio.field.label" value="area"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="block"/>
+	</field>
+	<field name="ph_value" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="ph_value"/>
+		<property name="com.jaspersoft.studio.field.label" value="ph_value"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="block"/>
+	</field>
+	<field name="plant_quantity" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="plant_quantity"/>
+		<property name="com.jaspersoft.studio.field.label" value="plant_quantity"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="block"/>
+	</field>
+	<field name="humidity" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="humidity"/>
+		<property name="com.jaspersoft.studio.field.label" value="humidity"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="block"/>
+	</field>
+	<field name="block_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="block_name"/>
+		<property name="com.jaspersoft.studio.field.label" value="block_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="block"/>
+	</field>
+	<field name="additionalCost" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="additionalCost"/>
+		<property name="com.jaspersoft.studio.field.label" value="additionalCost"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="block"/>
+	</field>
+	<field name="employee_salary" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="employee_salary"/>
+		<property name="com.jaspersoft.studio.field.label" value="employee_salary"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="block"/>
+	</field>
+	<field name="gmail_id" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="gmail_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="gmail_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="block"/>
+	</field>
+	<field name="plant_Expenses" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="plant_Expenses"/>
+		<property name="com.jaspersoft.studio.field.label" value="plant_Expenses"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="block"/>
+	</field>
+	<field name="fertilizer_expenses" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="fertilizer_expenses"/>
+		<property name="com.jaspersoft.studio.field.label" value="fertilizer_expenses"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="block"/>
+	</field>
+	<field name="note" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="note"/>
+		<property name="com.jaspersoft.studio.field.label" value="note"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="block"/>
+	</field>
+	<group name="Group1">
+		<groupExpression><![CDATA[$F{block_id}]]></groupExpression>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="132" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="440" height="95" backcolor="#5285CC" uuid="6c6ca4e1-17cd-4913-93d6-5e670ea9ae8a"/>
+				<staticText>
+					<reportElement style="Title" x="0" y="0" width="370" height="66" uuid="a2a2cac8-5a7d-4487-8c54-dab235ce4e21"/>
+					<textElement>
+						<font isBold="false"/>
+					</textElement>
+					<text><![CDATA[CIC Agri Banana]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="SubTitle" x="157" y="66" width="249" height="29" uuid="8978eac3-c578-41c9-837e-48d2b0184642"/>
+					<textElement>
+						<font size="22" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Summary of block]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="100" width="555" height="32" forecolor="#000000" backcolor="#34D94D" uuid="e3c14156-5b51-4201-918b-97fdc012e5d4"/>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement x="410" y="10" width="144" height="20" forecolor="#FFFFFF" uuid="5c3301e7-a737-4c59-8a2f-a6c79fd1adb8"/>
+					<textElement textAlignment="Right">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+			<image>
+				<reportElement x="451" y="0" width="104" height="95" uuid="3b2d4c40-a0cb-4750-8ef1-17c9b039798c"/>
+				<imageExpression><![CDATA["D:/CIC_Project Nimna2/CIC_Project Nimna/CIC_Project/src/img/CIC_Holdings_logo.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="47" splitType="Stretch">
+			<staticText>
+				<reportElement x="2" y="14" width="96" height="26" uuid="eb771b5d-3054-443b-8f40-50138adb6105">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="049216a2-7104-422d-95e4-e548e589ef41"/>
+				</reportElement>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Block Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="14" width="89" height="26" uuid="ad862813-94ef-4521-a951-dc28aab2d089">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0a089a3e-f35a-486b-9ced-a251469f662e"/>
+				</reportElement>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Area]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="210" y="14" width="90" height="26" uuid="c2b23e78-5f3a-46f7-ae37-e326d430f534">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="04a7e1b1-d979-4c7d-9ac9-ceb15da403ac"/>
+				</reportElement>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Plant Quantity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="333" y="14" width="73" height="26" uuid="c5dce852-8a98-4968-9948-835e965674f1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f5181f65-bd49-4b75-a5d9-0bec6e68f48b"/>
+				</reportElement>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[pH Value]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="14" width="79" height="26" uuid="607b3d82-02b9-42ee-846d-05053e47014f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0d35186a-6c25-4445-ad6a-76ba663b7be3"/>
+				</reportElement>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Humidity]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement x="2" y="0" width="96" height="20" uuid="b7c8010c-6aba-49fa-940d-90e1db2c3ff9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="049216a2-7104-422d-95e4-e548e589ef41"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{block_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="0" width="88" height="20" uuid="9112fc99-ab10-43bc-9f10-7e32dfb88133">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0a089a3e-f35a-486b-9ced-a251469f662e"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{area}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="210" y="0" width="90" height="20" uuid="0d17c991-6eae-4322-9a48-203748134340">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="04a7e1b1-d979-4c7d-9ac9-ceb15da403ac"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{plant_quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="333" y="1" width="74" height="19" uuid="b89f8cb1-c09e-418d-b5c3-7d1dcfa3fba5">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f5181f65-bd49-4b75-a5d9-0bec6e68f48b"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{ph_value}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="0" width="79" height="19" uuid="d81688b7-1f47-4df8-904f-247376c35051">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0d35186a-6c25-4445-ad6a-76ba663b7be3"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{humidity}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="14" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="0" width="555" height="1" uuid="1133a906-5b71-476e-9f3e-bc97c97058c1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="37" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-4" y="0" width="555" height="24" forecolor="#D0B48E" backcolor="#5285CC" uuid="729c3539-f946-4d0e-a0a7-bda2815ea1b0"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="513" y="0" width="40" height="20" forecolor="#FFFFFF" uuid="4834e99c-7f6c-485a-b098-50e5187f2ab4"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="433" y="0" width="80" height="20" forecolor="#FFFFFF" uuid="9825b46e-76f1-469a-abb8-a1cc27aad685"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="2" y="1" width="197" height="20" forecolor="#FFFFFF" uuid="137d38c7-1a83-4fc5-b156-9d5f1b1a0ddc"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,6 @@
+#sineupbtn,#sineup2,#signbtn{
+    -fx-background-radius: 15;
+}
+#signbtn{
+    -fx-background-color: #5DC85C;
+}

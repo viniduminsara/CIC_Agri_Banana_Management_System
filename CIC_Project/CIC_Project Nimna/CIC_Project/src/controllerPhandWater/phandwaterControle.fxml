@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXSlider?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllerPhandWater.PhandwaterControle">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <JFXComboBox fx:id="comboBox1" layoutX="32.0" layoutY="91.0" prefHeight="31.0" prefWidth="203.0" />
+            <JFXComboBox fx:id="comboBox2" layoutX="32.0" layoutY="252.0" prefHeight="31.0" prefWidth="203.0" />
+            <JFXSlider fx:id="phSlider" layoutX="289.0" layoutY="98.0" prefHeight="49.0" prefWidth="300.0" />
+            <JFXSlider fx:id="humiditySlider" layoutX="286.0" layoutY="243.0" prefHeight="49.0" prefWidth="300.0" />
+            <Label layoutX="32.0" layoutY="27.0" prefHeight="31.0" prefWidth="118.0" text="PH Level">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="32.0" layoutY="185.0" prefHeight="31.0" prefWidth="118.0" text="Humidity">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

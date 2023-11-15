@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="harvestmain" prefHeight="1020.0" prefWidth="1532.0" stylesheets="@../styles/harvest.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HarvestFromController">
+   <children>
+      <TabPane fx:id="mainplln" layoutX="30.0" layoutY="30.0" prefHeight="960.0" prefWidth="1517.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="tab2" text="Input Harvest Details">
+            <content>
+              <AnchorPane fx:id="tabpnal2" minHeight="0.0" minWidth="0.0" prefHeight="465.0" prefWidth="736.0">
+                     <children>
+                        <JFXButton fx:id="plantmaintainbtn" layoutX="281.0" layoutY="467.0" onAction="#onActionSave" prefHeight="36.0" prefWidth="149.0" text="Save" />
+                        <JFXTextField fx:id="inputtext1" alignment="BASELINE_LEFT" layoutX="105.0" layoutY="228.0" prefHeight="31.0" prefWidth="325.0" promptText="  Full Harvest" />
+                        <JFXTextField fx:id="inputtext2" alignment="BASELINE_LEFT" layoutX="105.0" layoutY="311.0" prefHeight="31.0" prefWidth="325.0" promptText="  Wastage Harvest" />
+                        <TableView fx:id="harvestTable" layoutX="23.0" layoutY="528.0" prefHeight="343.0" prefWidth="1324.0">
+                          <columns>
+                            <TableColumn fx:id="dateColumn" prefWidth="220.0" text="Date" />
+                            <TableColumn fx:id="areaName" prefWidth="220.0" text="Block Name" />
+                              <TableColumn fx:id="fullColumn" prefWidth="220.0" text="Full Harvest" />
+                              <TableColumn fx:id="wastageColumn" prefWidth="220.0" text="Wastage Harvest" />
+                              <TableColumn fx:id="remainingColumn" prefWidth="220.0" text="Remain Harvest" />
+                              <TableColumn fx:id="pricePerKgs" minWidth="5.0" prefWidth="220.0" text="Price per Kilogram" />
+                          </columns>
+                        </TableView>
+                        <JFXDatePicker fx:id="datepicker" layoutX="105.0" layoutY="154.0" prefHeight="31.0" prefWidth="325.0" promptText="Date" />
+                        <JFXComboBox fx:id="comboBox1" layoutX="105.0" layoutY="79.0" prefHeight="31.0" prefWidth="325.0" promptText="  Select area" />
+                        <JFXTextField fx:id="pricePerKg" layoutX="105.0" layoutY="410.0" prefHeight="31.0" prefWidth="325.0" promptText="Price per kilo" />
+                        <PieChart fx:id="harvestPieChart" layoutX="765.0" prefHeight="485.0" prefWidth="656.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="tab1" onSelectionChanged="#onSelectionHarvestSummary" text="Harvest Summary">
+            <content>
+              <AnchorPane fx:id="tabpln1" minHeight="0.0" minWidth="0.0" prefHeight="487.0" prefWidth="725.0">
+                     <children>
+                        <Label fx:id="inputlabel2" layoutX="39.0" layoutY="26.0" prefHeight="40.0" prefWidth="390.0" text="   Full Harvest">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="inputlabel3" layoutX="39.0" layoutY="98.0" prefHeight="40.0" prefWidth="390.0" text="   Wastage Harvest">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="table" layoutX="444.0" layoutY="26.0" prefHeight="308.0" prefWidth="1000.0">
+                          <columns>
+                            <TableColumn fx:id="areaNameColumn" minWidth="200.0" prefWidth="200.0" text="Area Name" />
+                            <TableColumn fx:id="fullHarvestColumn" minWidth="0.0" prefWidth="200.0" text="Full Harvest" />
+                              <TableColumn fx:id="wastageharvestcoloumn" prefWidth="200.0" text="Wastage Harvest" />
+                              <TableColumn fx:id="stockHarvestColumn" prefWidth="200.0" text="Stocked Harvest" />
+                              <TableColumn fx:id="profitColumn" prefWidth="200.0" text="Profit" />
+                          </columns>
+                        </TableView>
+                        <JFXTextField alignment="CENTER" layoutX="41.0" layoutY="796.0" prefHeight="31.0" prefWidth="635.0" promptText="mail" />
+                        <JFXButton fx:id="sendreportbtn" layoutX="722.0" layoutY="800.0" onAction="#sendOnAction" prefHeight="31.0" prefWidth="118.0" text="Send Repots" />
+                        <LineChart fx:id="lineChart" layoutX="40.0" layoutY="365.0" prefHeight="400.0" prefWidth="1415.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                        <Label fx:id="inputlabel4" layoutX="39.0" layoutY="173.0" prefHeight="40.0" prefWidth="390.0" styleClass=".custom-fx-inputlabel4" text="  Remaining Harvest " textAlignment="CENTER">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="fullharvestlabel" layoutX="362.0" layoutY="24.0" prefHeight="42.0" prefWidth="55.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="wastageharvestlabel" layoutX="362.0" layoutY="97.0" prefHeight="42.0" prefWidth="55.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="remainingharvestlabel" layoutX="362.0" layoutY="172.0" prefHeight="42.0" prefWidth="55.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <Label layoutY="36.0" text="Manage Harvest" textFill="#9f8e8e" AnchorPane.leftAnchor="1300.0" AnchorPane.topAnchor="36.0">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
